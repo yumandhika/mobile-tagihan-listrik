@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tagihan Listrik</string>
+    <string name="image_view_icon_user_folder">image view icon user folder</string>
+    <string name="check_the_bill">Check the Bill</string>
+    <string name="bill_details">Bill Details</string>
+    <string name="customer_number">Customer Number</string>
+    <string name="unknown">unknown</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="total_bill">Total Bill</string>
+    <string name="bill">Bill</string>
+    <string name="admin_fee">Admin Fee</string>
+    <string name="bill_period">Bill Period</string>
+    <string name="simpan">Simpan</string>
+    <string name="batal">Batal</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="back_to_main_menu">Back to Main Menu</string>
+    <string name="customer_id">Customer ID</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="bill_info_has_been_updated">Bill info has been updated</string>
+    <string name="bill_info_has_been_saved">Bill info has been saved</string>
+    <string name="about">about</string>
+    <string name="image_view_logo_app">Image View logo app</string>
+    <string name="app_version">1.0.0</string>
+    <string name="copyright_u00a9_2018">Copyright © 2018</string>
+    <string name="history">History</string>
+    <string name="example_bill_value">Rp 1.955.000</string>
+    <string name="history_bill">History Bill</string>
+    <string name="image_view_bill_history_not_found">image view bill history not found</string>
+    <string name="data_not_available">Data not available</string>
+    <string name="image_view_logo_dbs">image view logo dbs</string>
+</resources>

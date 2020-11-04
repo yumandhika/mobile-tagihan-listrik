@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.tagihanlistrik.ysn"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 8
+        versionName "1.0.7"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "production"
+    productFlavors {
+        production {
+            applicationIdSuffix ".production"
+            buildConfigField("String", "API_KEY", "\"d6fae3eae278127ebe48d2db57274e22414fec47\"")
+            buildConfigField("String", "BASE_URL_API_BISA_TOP_UP", "\"http://api.bisatopup.com/\"")
+            buildConfigField("String", "PRODUCT_PLN", "\"PLN\"")
+        }
+    }
+}
+
+dependencies {
+    /** From directory */
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    /** Testing Framework */
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile "junit:junit:$junitVersion"
+
+    /** Android support */
+    implementation "com.android.support:appcompat-v7:$androidSupportVersion"
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    implementation "com.android.support:support-v4:$androidSupportVersion"
+    implementation "com.android.support:design:$androidSupportVersion"
+    implementation "com.android.support:cardview-v7:$androidSupportVersion"
+
+    /** Kotlin support */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    /** Type safe HTTP client for Android and Java by Square */
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit-converters:$retrofitVersion"
+
+    /** OkHttp */
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
+    /** RxJava - Reactive Extensions for the JVM - a library for composing asynchronous and
+     * event-based programs using observable sequences for the Java VM
+     */
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2Version"
+
+    /** RxJava bindings for Android */
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+
+    /** A Java serialization/deserialization library to convert Java Objects into JSON and back */
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    /** Android Room */
+    implementation "android.arch.persistence.room:runtime:$roomVersion"
+    kapt "android.arch.persistence.room:compiler:$roomVersion"
+
+    /** Dependency Injection */
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    provided "org.glassfish:javax.annotation:$annotationVersion"
+
+    /** Memory leak detection */
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
+    testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
+
+    /** Fresco */
+    implementation "com.facebook.fresco:fresco:$frescoVersion"
+
+    /** Stetho */
+    implementation "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
+
+}
